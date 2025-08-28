@@ -23,10 +23,5 @@ pipeline {
                 war: '**/*.war'
             }
         }
-        stage('add files') {
-            steps {
-                sh 'git add Jenkinsfile'
-            }
-        }
     }
 }
