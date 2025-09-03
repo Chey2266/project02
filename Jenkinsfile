@@ -38,7 +38,7 @@ pipeline {
             body: "${currentBuild.currentResult}: Job ${env.JOB_NAME}\n More Info can be found here: ${env.BUILD_URL}",
 
             attachLog: true
-            
+
             slackSend meesage: "Build deployed successfully - Job ${env.JOB_NAME}\n More Info can be found here: ${env.BUILD_URL}"
         }
     }
