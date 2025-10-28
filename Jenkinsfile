@@ -6,7 +6,7 @@ pipeline {
     stages {
         stage('GitHub Clone') {
             steps {
-                git branch: 'project02', url: 'https://github.com/Chey2266/project02.git'
+                git branch: 'project02', credentialsId: 'b8649f09-a724-435e-bdbb-31f5068cbb81', url: 'https://github.com/Chey2266/project02.git''
             }
         }
         stage('Build Maven') {
@@ -16,9 +16,9 @@ pipeline {
         }
         stage('Deploy Tomcat') {
             steps {
-                deploy adapters: [tomcat9(alternativeDeploymentContext: '', credentialsId: '3fe07e03-12fd-4199-8d53-2929a9dbfaf2',
+                deploy adapters: [tomcat9(alternativeDeploymentContext: '',  credentialsId: 'c0264521-4691-4a27-b899-e1e134782a59',
                 path: '',
-                url: 'http://13.204.76.249:8080/')],
+                url: 'http://13.201.117.230:8080/')],
                 contextPath: 'project02',
                 war: '**/*.war'
             }
